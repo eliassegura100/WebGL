@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { SpinningCube } from './cube';
 import { OrbitControls } from '@react-three/drei';
 import { Starfield } from './stars';
+import { CameraIntro } from './CameraIntro';
 import { useRef } from 'react'
 
 export default function App() {
@@ -18,8 +19,9 @@ export default function App() {
             <directionalLight position={[5, 5, 5]} intensity={0.5} />
             {/* <pointLight position={[-5, -5, -5]} intensity={0.5} /> */}
             <Starfield speed={0.15} spread={100} />
-            <Starfield speed={0.05} spread={300} />
+            <Starfield speed={0.05} spread={200} />
             <SpinningCube ref={cubeRef} />
+            <CameraIntro />
             <OrbitControls />
         </Canvas>
     );
