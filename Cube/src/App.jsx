@@ -17,7 +17,8 @@ export default function App() {
             <ambientLight intensity={0.5}/>
             <directionalLight position={[5, 5, 5]} intensity={0.5} />
             {/* <pointLight position={[-5, -5, -5]} intensity={0.5} /> */}
-            <Starfield />
+            <Starfield speed={0.15} spread={100} />
+            <Starfield speed={0.05} spread={300} />
             <SpinningCube ref={cubeRef} />
             <OrbitControls />
         </Canvas>
