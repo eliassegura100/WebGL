@@ -1,6 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import { SpinningCube } from './cube';
 import { OrbitControls } from '@react-three/drei';
+import { Starfield } from './stars';
 import { useRef } from 'react'
 
 export default function App() {
@@ -12,13 +13,18 @@ export default function App() {
             style={{ width: '100vw', height: '100vh' }}
             onPointerUp={() => cubeRef.current?.release()}
         >
-            <ambientLight />
-            {/* Floating cubes*/}
-              {/* <SpinningCube speed={0.02} startX={0} startY={0} />
-              <SpinningCube speed={0.02} startX={2} startY={1} />
-              <SpinningCube speed={0.015} startX={-2} startY={-1} /> */}
+            <color attach="background" args={['#000010']} />
+            <ambientLight intensity={0.5}/>
+            <directionalLight position={[5, 5, 5]} intensity={0.5} />
+            {/* <pointLight position={[-5, -5, -5]} intensity={0.5} /> */}
+            <Starfield />
             <SpinningCube ref={cubeRef} />
             <OrbitControls />
         </Canvas>
     );
 }
+
+{/* Floating cubes*/}
+              {/* <SpinningCube speed={0.02} startX={0} startY={0} />
+              <SpinningCube speed={0.02} startX={2} startY={1} />
+              <SpinningCube speed={0.015} startX={-2} startY={-1} /> */}
