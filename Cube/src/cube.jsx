@@ -1,6 +1,7 @@
 import { useRef, useState, forwardRef, useImperativeHandle} from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
+import { Edges } from '@react-three/drei'
 
 const vertexShader = `
     precision mediump float;
@@ -100,6 +101,8 @@ export const SpinningCube = forwardRef(function SpinningCube(props, ref) {
                 fragmentShader={fragmentShader}
                 uniforms={{ time: { value: 0} }}
             />
+            
+            <Edges color="black" lineWidth={2}/>
 
             {/* <meshStandardMaterial 
                     map={texture}

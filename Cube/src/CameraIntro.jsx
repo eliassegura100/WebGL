@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { mx_fractal_noise_float } from 'three/src/nodes/TSL.js'
 
 const START_Z = 2000
 const END_Z = 5
